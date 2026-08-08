@@ -11,7 +11,7 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
-    <header className={cn("border border-b")}>
+    <header className={cn("border border-b", className)}>
       <Container className="flex items-center justify-between py-8">
         {/* Left part */}
         <div className="flex items-center gap-4">
