@@ -17,37 +17,21 @@ type CheckboxFiltersGroupProps = {
   className?: string;
 };
 
-export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
+export const CheckFiltersGroupckbox: React.FC<CheckboxFiltersGroupProps> = ({
   title,
   items,
   defaultItems,
   limit = 5,
   searchInputPlaceholder = "Search...",
   onChange,
-  defaultValue = [],
+  defaultValue,
   className,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
-  const [selectedValues, setSelectedValues] = React.useState(
-    () => new Set(defaultValue),
-  );
 
   const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
-  };
-
-  const onCheckedChange = (value: string, checked: boolean) => {
-    const updatedValues = new Set(selectedValues);
-
-    if (checked) {
-      updatedValues.add(value);
-    } else {
-      updatedValues.delete(value);
-    }
-
-    setSelectedValues(updatedValues);
-    onChange?.(Array.from(updatedValues));
   };
 
   const list = showAll
@@ -72,10 +56,8 @@ export const CheckboxFiltersGroup: React.FC<CheckboxFiltersGroupProps> = ({
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
         {list.map((item) => (
           <FilterCheckbox
-            onCheckedChange={(checked) =>
-              onCheckedChange(item.value, checked)
-            }
-            checked={selectedValues.has(item.value)}
+            onCheckedChange={(i) => console.log("dd")}
+            //   checked={selected.has(item.value)}
             key={String(item.value)}
             value={item.value}
             text={item.text}
