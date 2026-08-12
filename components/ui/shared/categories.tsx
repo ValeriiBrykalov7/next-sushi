@@ -8,10 +8,10 @@ type CategoriesProps = {
 
 const cats = [
   "Maki",
-  "Combo",
   "Nigiri",
-  "Gunkan",
-  "Hot dishes",
+  "Sashimi",
+  "Combos",
+  "Special Rolls",
   "Deserts",
   "Drinks",
 ];
