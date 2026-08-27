@@ -4,7 +4,9 @@ import { ProductsGroupList } from "@/components/ui/shared/products-group-list";
 import { Title } from "@/components/ui/shared/title";
 import { TopBar } from "@/components/ui/shared/top-bar";
 
+
 export default function Home() {
+  
   return (
     <>
       <Container className="mt-10">
